@@ -112,6 +112,42 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
           />
         );
 
+      case SlideType.IMAGE:
+        return (
+          <div className="flex flex-col items-center justify-center h-full space-y-6 md:space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center break-words mb-4">
+              {slide.title}
+            </h2>
+            
+            {slide.imageUrl && (
+              <div className="relative max-w-5xl w-full flex-1 flex items-center justify-center">
+                <img
+                  src={slide.imageUrl}
+                  alt={slide.title}
+                  className="max-w-full max-h-full object-contain rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  crossOrigin="anonymous"
+                />
+              </div>
+            )}
+            
+            {slide.imageCaption && (
+              <p className="text-lg md:text-xl text-gray-600 italic text-center break-words">
+                {slide.imageCaption}
+              </p>
+            )}
+            
+            {slide.content && slide.content.length > 0 && (
+              <div className="space-y-3 md:space-y-4 text-center">
+                {slide.content.map((item, idx) => (
+                  <p key={idx} className="text-base md:text-lg text-gray-700 break-words">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+
       case SlideType.CONTENT:
       default:
         return (
@@ -136,11 +172,12 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
 
   return (
     <div className="w-full h-full p-6 md:p-12 lg:p-16 max-w-7xl mx-auto animate-fadeIn overflow-y-auto">
-      {/* Module Label (except for Title, Ending, Interaction, and Timeline slides) */}
+      {/* Module Label (except for Title, Ending, Interaction, Timeline, and Image slides) */}
       {slide.type !== SlideType.TITLE && 
        slide.type !== SlideType.ENDING && 
        slide.type !== SlideType.INTERACTION &&
-       slide.type !== SlideType.TIMELINE && (
+       slide.type !== SlideType.TIMELINE &&
+       slide.type !== SlideType.IMAGE && (
         <div className="absolute top-6 left-6 md:top-8 md:left-12 lg:left-16 text-xs font-bold text-gray-400 uppercase tracking-widest">
            {slide.module}
         </div>

@@ -181,6 +181,18 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 12,
+    type: SlideType.IMAGE,
+    module: "模块四：核心心法",
+    title: "关键认知转变",
+    imageUrl: "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100001572/7b47.jpg",
+    imageCaption: "从「我会什么」到「我想要什么」",
+    content: [
+      "明确核心需求 → 摆脱技能束缚 → 聚焦问题解决",
+      "引导AI优化 → 掌控实现方向 → 推动持续迭代"
+    ]
+  },
+  {
+    id: 13,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
 
@@ -193,7 +205,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     type: SlideType.TABLE,
     module: "模块四：核心心法",
     title: "思维模式碰撞",
@@ -207,7 +219,7 @@ export const SLIDES: SlideData[] = [
     }
   },
   {
-    id: 14,
+    id: 15,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
     title: "新的范式：Agent 研发",
@@ -218,7 +230,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 15,
+    id: 16,
     type: SlideType.CONTENT,
     module: "模块四：Agent 流程",
     title: "Agent 工作流程拆解",
@@ -231,7 +243,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 16,
+    id: 17,
     type: SlideType.TITLE,
     module: "模块过渡",
     title: "模块五：实战演示",
@@ -241,7 +253,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 17,
+    id: 18,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
 
@@ -253,7 +265,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 18,
+    id: 19,
     type: SlideType.CONTENT,
     module: "模块五：Context 详解",
     title: "Context：上下文的艺术",
@@ -265,7 +277,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 19,
+    id: 20,
     type: SlideType.CONTENT,
     module: "模块五：Instruction 详解",
     title: "Instruction：清晰的指令",
@@ -277,7 +289,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 20,
+    id: 21,
     type: SlideType.CONTENT,
     module: "模块五：Feedback 详解",
     title: "Feedback：迭代的力量",
@@ -289,7 +301,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 21,
+    id: 22,
     type: SlideType.TITLE,
     module: "模块过渡",
     title: "模块六：心态与作业",
@@ -299,7 +311,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 22,
+    id: 23,
     type: SlideType.CONTENT,
     module: "模块六：心态与作业",
 
@@ -311,7 +323,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 23,
+    id: 24,
     type: SlideType.CONTENT,
     module: "模块六：0→1 路径",
     title: "从 0 到 1 的四步路径",
@@ -323,7 +335,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 24,
+    id: 25,
     type: SlideType.INTERACTION,
     module: "模块六：自我检视",
     title: "你现在在哪一步？",
@@ -335,7 +347,7 @@ export const SLIDES: SlideData[] = [
     isInteractive: true
   },
   {
-    id: 25,
+    id: 26,
     type: SlideType.CONTENT,
     module: "模块六：作业说明",
 
@@ -349,7 +361,7 @@ export const SLIDES: SlideData[] = [
   },
 
   {
-    id: 26,
+    id: 27,
     type: SlideType.ENDING,
     module: "课程结束",
     title: "从现在开始，做一个会用 AI 的人",
