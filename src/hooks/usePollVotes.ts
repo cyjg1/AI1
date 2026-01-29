@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../integrations/supabase/client';
+import { supabase } from '../src/integrations/supabase/client';
 
 interface VoteCount {
   option_id: string;
@@ -63,12 +63,29 @@ export function usePollVotes(slideId: number) {
 
   // 提交投票
   const submitVote = async (optionId: string) => {
-    if (hasVoted) return;
-
     setLoading(true);
     try {
       const sessionId = getSessionId();
 
+      // 如果已经投过票，先删除旧的投票
+      if (hasVoted && userVote) {
+        const { error: deleteError } = await supabase
+          .from('poll_votes')
+          .delete()
+          .eq('slide_id', slideId)
+          .eq('session_id', sessionId);
+
+        if (deleteError) throw deleteError;
+
+        // 更新本地状态：减少旧选项的票数
+        setVotes(prev => ({
+          ...prev,
+          [userVote]: Math.max((prev[userVote] || 0) - 1, 0)
+        }));
+        setTotalVotes(prev => Math.max(prev - 1, 0));
+      }
+
+      // 插入新投票
       const { error } = await supabase
         .from('poll_votes')
         .insert({
@@ -82,7 +99,7 @@ export function usePollVotes(slideId: number) {
       setHasVoted(true);
       setUserVote(optionId);
       
-      // 立即更新本地状态
+      // 立即更新本地状态：增加新选项的票数
       setVotes(prev => ({
         ...prev,
         [optionId]: (prev[optionId] || 0) + 1

@@ -13,6 +13,12 @@ interface Props {
 const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) => {
   const { votes, totalVotes, hasVoted, userVote, loading, submitVote } = usePollVotes(slideId);
 
+  const handleVote = (optionId: string) => {
+    // 允许更改投票：如果点击的是当前选项，不做任何操作；否则更改投票
+    if (userVote === optionId) return;
+    submitVote(optionId);
+  };
+
   const getPercentage = (optionId: string) => {
     if (totalVotes === 0) return 0;
     return Math.round(((votes[optionId] || 0) / totalVotes) * 100);
@@ -32,15 +38,15 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
           return (
             <button
               key={option.id}
-              onClick={() => !hasVoted && submitVote(option.id)}
-              disabled={hasVoted || loading}
+              onClick={() => handleVote(option.id)}
+              disabled={loading}
               className={`relative overflow-hidden p-6 text-left border-2 rounded-lg transition-all duration-300 group ${
                 isSelected
                   ? 'border-black bg-black text-white'
                   : hasVoted
-                  ? 'border-gray-200 cursor-default'
+                  ? 'border-gray-200 hover:border-gray-400 hover:shadow-lg cursor-pointer'
                   : 'border-gray-200 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1'
-              }`}
+              } ${loading ? 'opacity-50 cursor-wait' : ''}`}
             >
               {/* 投票进度条背景 */}
               {hasVoted && (
@@ -53,16 +59,25 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
               <div className="relative z-10 flex items-center justify-between">
                 <div className="flex items-center flex-1">
                   <span
-                    className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold mr-4 transition-colors ${
+                    className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold mr-4 transition-all ${
                       isSelected
                         ? 'bg-white text-black'
+                        : hasVoted && !isSelected
+                        ? 'bg-gray-100 text-gray-600 group-hover:bg-gray-200 group-hover:scale-110'
                         : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
                     }`}
                   >
                     {option.id}
                   </span>
                   <div className="flex-1">
-                    <div className="font-bold text-lg">{option.label}</div>
+                    <div className="font-bold text-lg flex items-center gap-2">
+                      {option.label}
+                      {isSelected && (
+                        <span className="text-xs bg-white text-black px-2 py-1 rounded-full">
+                          已选择
+                        </span>
+                      )}
+                    </div>
                     <div
                       className={`text-sm ${
                         isSelected ? 'text-gray-300' : 'text-gray-500'
@@ -90,7 +105,7 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
         <div className="mt-8 flex items-center justify-center text-gray-500 animate-fade-in">
           <BarChart3 className="w-5 h-5 mr-2" />
           <span className="text-sm">
-            共 {totalVotes} 人参与投票 · 实时更新中
+            共 {totalVotes} 人参与投票 · 实时更新中 · 点击其他选项可更改投票
           </span>
         </div>
       )}
@@ -98,6 +113,12 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
       {!hasVoted && !loading && (
         <div className="mt-6 text-center text-sm text-gray-400 animate-pulse">
           点击选项参与投票
+        </div>
+      )}
+
+      {loading && (
+        <div className="mt-6 text-center text-sm text-gray-400">
+          正在更新投票...
         </div>
       )}
     </div>

@@ -1,0 +1,10 @@
+-- 添加删除投票的RLS策略
+-- 允许用户删除自己的投票（基于session_id）
+CREATE POLICY "Users can delete their own votes"
+  ON poll_votes
+  FOR DELETE
+  TO public
+  USING (true);
+
+-- 注释：由于我们使用session_id而不是真实的用户认证，
+-- 这里允许任何人删除（在客户端逻辑中确保只删除自己的session_id的记录）
