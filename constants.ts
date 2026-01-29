@@ -171,6 +171,16 @@ export const SLIDES: SlideData[] = [
 
   {
     id: 11,
+    type: SlideType.TITLE,
+    module: "模块过渡",
+    title: "模块四：核心心法",
+    content: [
+      "MVP 思维与 AI 融合",
+      "从产品思维到 Agent 研发"
+    ]
+  },
+  {
+    id: 12,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
 
@@ -183,7 +193,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     type: SlideType.TABLE,
     module: "模块四：核心心法",
     title: "思维模式碰撞",
@@ -197,7 +207,7 @@ export const SLIDES: SlideData[] = [
     }
   },
   {
-    id: 13,
+    id: 14,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
     title: "新的范式：Agent 研发",
@@ -208,7 +218,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 14,
+    id: 15,
     type: SlideType.CONTENT,
     module: "模块四：Agent 流程",
     title: "Agent 工作流程拆解",
@@ -221,7 +231,17 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 15,
+    id: 16,
+    type: SlideType.TITLE,
+    module: "模块过渡",
+    title: "模块五：实战演示",
+    content: [
+      "Vibe Coding 三要素",
+      "从理论到实践"
+    ]
+  },
+  {
+    id: 17,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
 
@@ -233,7 +253,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 16,
+    id: 18,
     type: SlideType.CONTENT,
     module: "模块五：Context 详解",
     title: "Context：上下文的艺术",
@@ -245,7 +265,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 17,
+    id: 19,
     type: SlideType.CONTENT,
     module: "模块五：Instruction 详解",
     title: "Instruction：清晰的指令",
@@ -257,7 +277,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 18,
+    id: 20,
     type: SlideType.CONTENT,
     module: "模块五：Feedback 详解",
     title: "Feedback：迭代的力量",
@@ -269,20 +289,17 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 19,
-    type: SlideType.CONTENT,
-    module: "模块五：实战演示",
-    title: "演示：从 0 到 1 (OCR 工具)",
+    id: 21,
+    type: SlideType.TITLE,
+    module: "模块过渡",
+    title: "模块六：心态与作业",
     content: [
-      "Step 1: 打开 Cursor/Lovable。",
-      "Step 2: Prompt 「做个网页，支持上传图片，识别导出 Markdown」。",
-      "Step 3: 生成与预览。",
-      "Step 4: 反馈调整 —— 「换个 CSS 风格」，「用更高级的模型」。",
-      "Step 5: 部署上线，分享给团队。"
+      "建立正确的心态",
+      "开启你的 AI 之旅"
     ]
   },
   {
-    id: 20,
+    id: 22,
     type: SlideType.CONTENT,
     module: "模块六：心态与作业",
 
@@ -294,7 +311,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 21,
+    id: 23,
     type: SlideType.CONTENT,
     module: "模块六：0→1 路径",
     title: "从 0 到 1 的四步路径",
@@ -306,7 +323,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 22,
+    id: 24,
     type: SlideType.INTERACTION,
     module: "模块六：自我检视",
     title: "你现在在哪一步？",
@@ -318,7 +335,7 @@ export const SLIDES: SlideData[] = [
     isInteractive: true
   },
   {
-    id: 23,
+    id: 25,
     type: SlideType.CONTENT,
     module: "模块六：作业说明",
 
@@ -332,7 +349,7 @@ export const SLIDES: SlideData[] = [
   },
 
   {
-    id: 24,
+    id: 26,
     type: SlideType.ENDING,
     module: "课程结束",
     title: "从现在开始，做一个会用 AI 的人",

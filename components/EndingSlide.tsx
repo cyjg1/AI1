@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RotateCcw, Sparkles, CheckCircle2 } from 'lucide-react';
+import { RotateCcw, Sparkles, CheckCircle2, X } from 'lucide-react';
 
 interface Props {
   title: string;
@@ -9,10 +9,14 @@ interface Props {
 
 const EndingSlide: React.FC<Props> = ({ title, content, onRestart }) => {
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showQRCode, setShowQRCode] = useState(false);
 
   const handleClick = () => {
     setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 2000);
+    setTimeout(() => {
+      setShowConfetti(false);
+      setShowQRCode(true);
+    }, 1000);
   };
 
   return (
@@ -95,6 +99,41 @@ const EndingSlide: React.FC<Props> = ({ title, content, onRestart }) => {
           </button>
         </div>
       </div>
+
+      {/* 二维码模态框 */}
+      {showQRCode && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center modal-backdrop animate-fadeIn"
+          onClick={() => setShowQRCode(false)}
+        >
+          <div className="relative bg-white rounded-2xl p-8 shadow-2xl zoom-in" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+              onClick={() => setShowQRCode(false)}
+            >
+              <X className="w-5 h-5 text-gray-600" />
+            </button>
+            
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4">扫码加入社群</h3>
+              <p className="text-gray-600 mb-6">一起学习 AI 编程，共同进步</p>
+              
+              <div className="bg-white p-4 rounded-xl border-2 border-gray-200">
+                <img
+                  src="https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100001572/0554.png"
+                  alt="社群二维码"
+                  className="w-64 h-64 object-contain"
+                  crossOrigin="anonymous"
+                />
+              </div>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                点击任意位置关闭
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         @keyframes float {
