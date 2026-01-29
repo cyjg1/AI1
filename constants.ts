@@ -87,43 +87,53 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 7,
-    type: SlideType.CONTENT,
+    type: SlideType.TIMELINE,
     module: "模块二：行业演进",
-    title: "第一阶段：基于统计的自动补全",
-    content: [
-      "时间：2015-2020",
-      "技术原理：N-gram 或 LSTM。",
-      "核心逻辑：像「鹦鹉」一样分析概率分布，预测下一个词。",
-      "局限性：缺乏长上下文，只能看当前行。",
-      "代表产品：Kite, Tabnine (早期)。"
+    title: "行业一直在演进，但最近才变得「又快又猛」",
+    duration: "0:15 - 0:40",
+    timelineStages: [
+      {
+        number: "01",
+        period: "2015-2020",
+        title: "统计自动补全",
+        description: [
+          "基于 N-gram、LSTM 等统计模型",
+          "核心逻辑：像「鹦鹉」一样分析概率分布，预测下一个词",
+          "局限性：缺乏长上下文，只能看当前行"
+        ],
+        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        caption: "泯灭了",
+        tools: ["Kite", "Tabnine"]
+      },
+      {
+        number: "02",
+        period: "2021-2024",
+        title: "Copilot 时代",
+        description: [
+          "Transformer 架构带来文件级上下文理解",
+          "核心交互：「幽灵文本」(Ghost Text)",
+          "Chat 功能出现，AI IDE 产品涌现 [R1]"
+        ],
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+        caption: "VS Code 是我学生时代的白月光",
+        tools: ["Copilot", "VSCode"]
+      },
+      {
+        number: "03",
+        period: "2024-2026",
+        title: "Agentic & Vibe Coding",
+        description: [
+          "AI 具备 Agent 能力：自主规划、执行多步操作、调用工具并自我修正",
+          "人只需要保持 Vibe 对，AI 就能产出代码 [R7]"
+        ],
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+        caption: "Lovable 成了更多人的 AI 白月光",
+        tools: ["Cursor", "Claude", "Lovable"]
+      }
     ]
   },
   {
     id: 8,
-    type: SlideType.CONTENT,
-    module: "模块二：行业演进",
-    title: "第二阶段：生成式 Copilot 时代",
-    content: [
-      "时间：2021-2024 [R1]",
-      "核心交互：「幽灵文本」(Ghost Text)。",
-      "能力跃升：理解意图（读懂函数名/注释）、文件级感知。",
-      "里程碑：2021年6月 GitHub Copilot 技术预览版发布。"
-    ]
-  },
-  {
-    id: 9,
-    type: SlideType.CONTENT,
-    module: "模块二：行业演进",
-    title: "第三阶段：Agentic & Vibe Coding",
-    content: [
-      "核心定义：从「补全」变为「代理」(Agent)。自主规划、执行、自我修正。",
-      "2024.07：Cursor 发布 Composer，自然语言驱动整个项目。[R2][R3]",
-      "2025.02：Andrej Karpathy 提出 \"Vibe Coding\" —— 只要 vibe 对，代码就对。[R7]",
-      "2025：Claude Code 发布，AI 像黑客一样在终端操作。[R4][R5]"
-    ]
-  },
-  {
-    id: 10,
     type: SlideType.CONTENT,
     module: "模块三：入局玩家",
     duration: "0:40 - 1:00",
@@ -137,7 +147,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 11,
+    id: 9,
     type: SlideType.CONTENT,
     module: "模块三：入局玩家",
     title: "阵营二：面向专业开发者",
@@ -150,7 +160,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 12,
+    id: 10,
     type: SlideType.CONTENT,
     module: "模块三：场景案例",
     title: "场景案例：文档整理助手",
@@ -163,7 +173,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 13,
+    id: 11,
     type: SlideType.CONTENT,
     module: "模块三：场景案例",
     title: "场景案例：OCR 小工具",
@@ -177,7 +187,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 14,
+    id: 12,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
     duration: "1:00 - 1:30",
@@ -190,7 +200,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 15,
+    id: 13,
     type: SlideType.TABLE,
     module: "模块四：核心心法",
     title: "思维模式碰撞",
@@ -204,7 +214,7 @@ export const SLIDES: SlideData[] = [
     }
   },
   {
-    id: 16,
+    id: 14,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
     title: "新的范式：Agent 研发",
@@ -215,7 +225,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 17,
+    id: 15,
     type: SlideType.CONTENT,
     module: "模块四：Agent 流程",
     title: "Agent 工作流程拆解",
@@ -228,7 +238,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 18,
+    id: 16,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
     duration: "1:30 - 1:50",
@@ -240,7 +250,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 19,
+    id: 17,
     type: SlideType.CONTENT,
     module: "模块五：Context 详解",
     title: "Context：上下文的艺术",
@@ -252,7 +262,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 20,
+    id: 18,
     type: SlideType.CONTENT,
     module: "模块五：Instruction 详解",
     title: "Instruction：清晰的指令",
@@ -264,7 +274,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 21,
+    id: 19,
     type: SlideType.CONTENT,
     module: "模块五：Feedback 详解",
     title: "Feedback：迭代的力量",
@@ -276,7 +286,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 22,
+    id: 20,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
     title: "演示：从 0 到 1 (OCR 工具)",
@@ -289,7 +299,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 23,
+    id: 21,
     type: SlideType.CONTENT,
     module: "模块六：心态与作业",
     duration: "1:50 - 2:05",
@@ -301,7 +311,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 24,
+    id: 22,
     type: SlideType.CONTENT,
     module: "模块六：0→1 路径",
     title: "从 0 到 1 的四步路径",
@@ -313,7 +323,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 25,
+    id: 23,
     type: SlideType.INTERACTION,
     module: "模块六：自我检视",
     title: "你现在在哪一步？",
@@ -325,7 +335,7 @@ export const SLIDES: SlideData[] = [
     isInteractive: true
   },
   {
-    id: 26,
+    id: 24,
     type: SlideType.CONTENT,
     module: "模块六：作业说明",
     duration: "2:05 - 2:15",
@@ -338,7 +348,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 27,
+    id: 25,
     type: SlideType.CONTENT,
     module: "附录",
     title: "资源清单",
@@ -352,7 +362,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 28,
+    id: 26,
     type: SlideType.ENDING,
     module: "课程结束",
     title: "从现在开始，做一个会用 AI 的人",

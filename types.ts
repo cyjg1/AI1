@@ -7,6 +7,7 @@ export enum SlideType {
   IMAGE = 'IMAGE',
   ENDING = 'ENDING',
   INTERACTION = 'INTERACTION',
+  TIMELINE = 'TIMELINE',
 }
 
 export interface Reference {
@@ -44,4 +45,15 @@ export interface SlideData {
   imageUrl?: string; // For image slides
   imageCaption?: string; // Image description
   isInteractive?: boolean; // For interactive questions
+  timelineStages?: TimelineStage[]; // For timeline slides
+}
+
+export interface TimelineStage {
+  number: string;
+  period: string;
+  title: string;
+  description: string[];
+  image?: string;
+  caption?: string;
+  tools: string[];
 }

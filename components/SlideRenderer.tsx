@@ -4,6 +4,7 @@ import { parseTextWithRefs } from '../utils/textParser';
 import PollSlide from './PollSlide';
 import EndingSlide from './EndingSlide';
 import InteractionSlide from './InteractionSlide';
+import TimelineSlide from './TimelineSlide';
 
 interface Props {
   slide: SlideData;
@@ -102,6 +103,15 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
           />
         );
 
+      case SlideType.TIMELINE:
+        return (
+          <TimelineSlide
+            title={slide.title}
+            subtitle={slide.quote}
+            stages={slide.timelineStages || []}
+          />
+        );
+
       case SlideType.CONTENT:
       default:
         return (
@@ -126,10 +136,11 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
 
   return (
     <div className="w-full h-full p-8 md:p-16 max-w-6xl mx-auto animate-fadeIn">
-      {/* Module Label (except for Title, Ending, and Interaction slides) */}
+      {/* Module Label (except for Title, Ending, Interaction, and Timeline slides) */}
       {slide.type !== SlideType.TITLE && 
        slide.type !== SlideType.ENDING && 
-       slide.type !== SlideType.INTERACTION && (
+       slide.type !== SlideType.INTERACTION &&
+       slide.type !== SlideType.TIMELINE && (
         <div className="absolute top-8 left-8 md:left-16 text-xs font-bold text-gray-400 uppercase tracking-widest">
            {slide.module} {slide.duration ? `• ${slide.duration}` : ''}
         </div>
