@@ -1,0 +1,32 @@
+-- 创建投票记录表
+CREATE TABLE IF NOT EXISTS poll_votes (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  slide_id INTEGER NOT NULL,
+  option_id TEXT NOT NULL,
+  voted_at TIMESTAMP DEFAULT NOW(),
+  session_id TEXT NOT NULL
+);
+
+-- 启用行级安全
+ALTER TABLE poll_votes ENABLE ROW LEVEL SECURITY;
+
+-- 允许所有人插入投票
+CREATE POLICY "Anyone can vote"
+  ON poll_votes
+  FOR INSERT
+  TO public
+  WITH CHECK (true);
+
+-- 允许所有人查看投票结果
+CREATE POLICY "Anyone can view votes"
+  ON poll_votes
+  FOR SELECT
+  TO public
+  USING (true);
+
+-- 创建索引以提高查询性能
+CREATE INDEX IF NOT EXISTS idx_poll_votes_slide_id ON poll_votes(slide_id);
+CREATE INDEX IF NOT EXISTS idx_poll_votes_session_id ON poll_votes(session_id, slide_id);
+
+-- 启用实时订阅
+ALTER PUBLICATION supabase_realtime ADD TABLE poll_votes;

@@ -1,0 +1,132 @@
+import React, { useState } from 'react';
+import { RotateCcw, Sparkles, CheckCircle2 } from 'lucide-react';
+
+interface Props {
+  title: string;
+  content: string[];
+  onRestart?: () => void;
+}
+
+const EndingSlide: React.FC<Props> = ({ title, content, onRestart }) => {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  const handleClick = () => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 2000);
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full relative overflow-hidden">
+      {/* 背景动画元素 */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-gray-200 opacity-20 animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              fontSize: `${Math.random() * 20 + 10}px`,
+            }}
+          >
+            AI
+          </div>
+        ))}
+      </div>
+
+      {/* 主内容 */}
+      <div className="z-10 text-center max-w-4xl px-8">
+        <div className="mb-8 animate-fadeIn">
+          <CheckCircle2 className="w-20 h-20 mx-auto mb-6 text-black animate-bounce" />
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-black mb-12 leading-tight animate-fadeIn">
+          {title}
+        </h1>
+
+        <div className="space-y-6 mb-16">
+          {content.map((item, idx) => (
+            <p
+              key={idx}
+              className="text-xl md:text-2xl text-gray-700 animate-fadeIn stagger-item"
+            >
+              {item}
+            </p>
+          ))}
+        </div>
+
+        {/* 交互按钮 */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {onRestart && (
+            <button
+              onClick={onRestart}
+              className="group px-8 py-4 bg-white border-2 border-black rounded-lg hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-2 hover-lift"
+            >
+              <RotateCcw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+              <span className="font-semibold">重新开始</span>
+            </button>
+          )}
+
+          <button
+            onClick={handleClick}
+            className="group px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 hover-lift relative overflow-hidden"
+          >
+            <Sparkles className="w-5 h-5" />
+            <span className="font-semibold">开始实践</span>
+            
+            {showConfetti && (
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(30)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-confetti"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      '--tx': `${(Math.random() - 0.5) * 200}px`,
+                      '--ty': `${(Math.random() - 0.5) * 200}px`,
+                      animationDelay: `${Math.random() * 0.3}s`,
+                    } as React.CSSProperties}
+                  />
+                ))}
+              </div>
+            )}
+          </button>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+
+        .animate-float {
+          animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes confetti {
+          0% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 1;
+          }
+          100% {
+            transform: translate(var(--tx), var(--ty)) rotate(720deg);
+            opacity: 0;
+          }
+        }
+
+        .animate-confetti {
+          animation: confetti 1s ease-out forwards;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default EndingSlide;

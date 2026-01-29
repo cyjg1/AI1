@@ -4,6 +4,9 @@ export enum SlideType {
   POLL = 'POLL',
   TABLE = 'TABLE',
   QUOTE = 'QUOTE',
+  IMAGE = 'IMAGE',
+  ENDING = 'ENDING',
+  INTERACTION = 'INTERACTION',
 }
 
 export interface Reference {
@@ -38,4 +41,7 @@ export interface SlideData {
     rows: TableRow[];
   };
   duration?: string; // e.g. "0:00 - 0:15"
+  imageUrl?: string; // For image slides
+  imageCaption?: string; // Image description
+  isInteractive?: boolean; // For interactive questions
 }

@@ -14,6 +14,10 @@ const App: React.FC = () => {
     setCurrentSlideIndex((prev) => Math.max(prev - 1, 0));
   }, []);
 
+  const handleRestart = useCallback(() => {
+    setCurrentSlideIndex(0);
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,7 +49,7 @@ const App: React.FC = () => {
 
       {/* Main Slide Area */}
       <main className="w-full h-full flex flex-col relative">
-        <SlideRenderer slide={currentSlide} />
+        <SlideRenderer slide={currentSlide} onRestart={handleRestart} />
       </main>
 
       {/* Navigation Controls */}

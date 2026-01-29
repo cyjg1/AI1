@@ -14,7 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      poll_votes: {
+        Row: {
+          id: string
+          option_id: string
+          session_id: string
+          slide_id: number
+          voted_at: string | null
+        }
+        Insert: {
+          id?: string
+          option_id: string
+          session_id: string
+          slide_id: number
+          voted_at?: string | null
+        }
+        Update: {
+          id?: string
+          option_id?: string
+          session_id?: string
+          slide_id?: number
+          voted_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
