@@ -181,14 +181,47 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 12,
-    type: SlideType.IMAGE,
+    type: SlideType.FLOWDIAGRAM,
     module: "模块四：核心心法",
-    title: "关键认知转变",
-    imageUrl: "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100001572/7b47.jpg",
-    imageCaption: "从「我会什么」到「我想要什么」",
-    content: [
-      "明确核心需求 → 摆脱技能束缚 → 聚焦问题解决",
-      "引导AI优化 → 掌控实现方向 → 推动持续迭代"
+    title: "关键认知转变：从「我会什么」到「我想要什么」",
+    quote: "",
+    flowNodes: [
+      {
+        id: 1,
+        title: "明确核心需求",
+        description: "清晰表达想要解决的问题，避免被技术细节干扰。聚焦目标本质，确保方向正确。",
+        color: "#3B82F6"
+      },
+      {
+        id: 2,
+        title: "摆脱技能束缚",
+        description: "无需掌握技术细节，借助AI实现想法。关键在于提出有效需求而非具备开发能力。",
+        color: "#8B5CF6"
+      },
+      {
+        id: 3,
+        title: "聚焦问题解决",
+        description: "重视解决问题本身，而非工具或方法的学习。以结果为导向推进项目进展。",
+        color: "#10B981"
+      },
+      {
+        id: 4,
+        title: "引导AI优化",
+        description: "根据输出结果判断优劣，持续反馈调整。通过迭代让AI逐步逼近理想方案。",
+        color: "#F59E0B"
+      },
+      {
+        id: 5,
+        title: "掌控实现方向",
+        description: "主导整个实现过程，确保符合预期目标。保持对进展与质量的控制力。",
+        color: "#EF4444"
+      },
+      {
+        id: 6,
+        title: "推动持续迭代",
+        description: "基于反馈不断优化需求与结果。形成「提出-验证-改进」的闭环流程。",
+        color: "#EC4899"
+      }
     ]
   },
   {

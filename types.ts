@@ -8,6 +8,7 @@ export enum SlideType {
   ENDING = 'ENDING',
   INTERACTION = 'INTERACTION',
   TIMELINE = 'TIMELINE',
+  FLOWDIAGRAM = 'FLOWDIAGRAM',
 }
 
 export interface Reference {
@@ -46,6 +47,7 @@ export interface SlideData {
   imageCaption?: string; // Image description
   isInteractive?: boolean; // For interactive questions
   timelineStages?: TimelineStage[]; // For timeline slides
+  flowNodes?: FlowNode[]; // For flow diagram slides
 }
 
 export interface TimelineStage {
@@ -56,4 +58,11 @@ export interface TimelineStage {
   image?: string;
   caption?: string;
   tools: string[];
+}
+
+export interface FlowNode {
+  id: number;
+  title: string;
+  description: string;
+  color: string;
 }

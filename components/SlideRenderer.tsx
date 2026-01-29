@@ -5,6 +5,7 @@ import PollSlide from './PollSlide';
 import EndingSlide from './EndingSlide';
 import InteractionSlide from './InteractionSlide';
 import TimelineSlide from './TimelineSlide';
+import FlowDiagramSlide from './FlowDiagramSlide';
 
 interface Props {
   slide: SlideData;
@@ -112,6 +113,15 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
           />
         );
 
+      case SlideType.FLOWDIAGRAM:
+        return (
+          <FlowDiagramSlide
+            title={slide.title}
+            subtitle={slide.quote || ""}
+            nodes={slide.flowNodes || []}
+          />
+        );
+
       case SlideType.IMAGE:
         return (
           <div className="flex flex-col items-center justify-center h-full space-y-6 md:space-y-8">
@@ -172,11 +182,12 @@ const SlideRenderer: React.FC<Props> = ({ slide, onRestart }) => {
 
   return (
     <div className="w-full h-full p-6 md:p-12 lg:p-16 max-w-7xl mx-auto animate-fadeIn overflow-y-auto">
-      {/* Module Label (except for Title, Ending, Interaction, Timeline, and Image slides) */}
+      {/* Module Label (except for Title, Ending, Interaction, Timeline, FlowDiagram, and Image slides) */}
       {slide.type !== SlideType.TITLE && 
        slide.type !== SlideType.ENDING && 
        slide.type !== SlideType.INTERACTION &&
        slide.type !== SlideType.TIMELINE &&
+       slide.type !== SlideType.FLOWDIAGRAM &&
        slide.type !== SlideType.IMAGE && (
         <div className="absolute top-6 left-6 md:top-8 md:left-12 lg:left-16 text-xs font-bold text-gray-400 uppercase tracking-widest">
            {slide.module}
