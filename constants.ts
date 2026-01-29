@@ -27,7 +27,7 @@ export const SLIDES: SlideData[] = [
     id: 2,
     type: SlideType.QUOTE,
     module: "模块一：新时代已来",
-    duration: "0:00 - 0:15",
+
     title: "不仅仅是工具的升级",
     quote: "AGI 时代已来，AI 不会淘汰人类，但会用 AI 的人一定会淘汰不会用的人。",
     content: [
@@ -68,15 +68,14 @@ export const SLIDES: SlideData[] = [
     content: [
       "等着别人教 → 迭代速度太快，没人能把所有东西都教会你",
       "觉得 AI 发展没这么快 → 已经有人用 AI 几分钟做出你一周的工作量",
-      "不知道 AI 到底是什么 → 今天就是来搞清楚的",
-      "过渡语：先把心态放对，我们再进入主张与目标。"
+      "不知道 AI 到底是什么 → 今天就是来搞清楚的"
     ]
   },
   {
     id: 6,
     type: SlideType.CONTENT,
     module: "模块二：行业演进",
-    duration: "0:15 - 0:40",
+
     title: "演进总览",
     quote: "不要只看热闹，要看懂技术底层的逻辑变迁。",
     content: [
@@ -90,7 +89,7 @@ export const SLIDES: SlideData[] = [
     type: SlideType.TIMELINE,
     module: "模块二：行业演进",
     title: "行业一直在演进，但最近才变得「又快又猛」",
-    duration: "0:15 - 0:40",
+
     timelineStages: [
       {
         number: "01",
@@ -134,9 +133,19 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 8,
+    type: SlideType.TITLE,
+    module: "模块过渡",
+    title: "模块三：入局玩家",
+    content: [
+      "谁在做 AI 编程工具？",
+      "如何选择适合自己的工具"
+    ]
+  },
+  {
+    id: 9,
     type: SlideType.CONTENT,
     module: "模块三：入局玩家",
-    duration: "0:40 - 1:00",
+
     title: "阵营一：面向非专业开发者",
     quote: "No-Code / Low-Code AI",
     content: [
@@ -147,7 +156,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     type: SlideType.CONTENT,
     module: "模块三：入局玩家",
     title: "阵营二：面向专业开发者",
@@ -159,38 +168,12 @@ export const SLIDES: SlideData[] = [
       "核心价值：深度融入工程流，处理复杂逻辑。"
     ]
   },
-  {
-    id: 10,
-    type: SlideType.CONTENT,
-    module: "模块三：场景案例",
-    title: "场景案例：文档整理助手",
-    content: [
-      "需求：文档多、难检索、格式不统一",
-      "输入：各类文档（PDF、Word、图片）",
-      "处理流程：上传 → AI 归类 → 提取关键信息 → 生成摘要",
-      "输出：结构化的知识库 + 智能检索",
-      "技术选型：OCR + 文本理解模型 + 向量数据库"
-    ]
-  },
+
   {
     id: 11,
     type: SlideType.CONTENT,
-    module: "模块三：场景案例",
-    title: "场景案例：OCR 小工具",
-    content: [
-      "需求：图片内容难以复制和编辑",
-      "输入：拍照或上传图片",
-      "处理流程：图像识别 → 文字提取 → 格式优化",
-      "输出：可编辑的 Markdown 或纯文本",
-      "适用场景：会议白板、纸质资料、书籍摘录",
-      "轻互动：你能想到一个自己的小需求吗？"
-    ]
-  },
-  {
-    id: 12,
-    type: SlideType.CONTENT,
     module: "模块四：核心心法",
-    duration: "1:00 - 1:30",
+
     title: "MVP 思维",
     content: [
       "定义：Minimum Viable Product (最小可行性产品)。",
@@ -200,7 +183,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 13,
+    id: 12,
     type: SlideType.TABLE,
     module: "模块四：核心心法",
     title: "思维模式碰撞",
@@ -214,7 +197,7 @@ export const SLIDES: SlideData[] = [
     }
   },
   {
-    id: 14,
+    id: 13,
     type: SlideType.CONTENT,
     module: "模块四：核心心法",
     title: "新的范式：Agent 研发",
@@ -225,7 +208,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 15,
+    id: 14,
     type: SlideType.CONTENT,
     module: "模块四：Agent 流程",
     title: "Agent 工作流程拆解",
@@ -238,10 +221,10 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 16,
+    id: 15,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
-    duration: "1:30 - 1:50",
+
     title: "Vibe Coding 三要素",
     content: [
       "1. Context (上下文)：一次性喂入所有资料（文档、数据库、旧代码）。",
@@ -250,7 +233,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 17,
+    id: 16,
     type: SlideType.CONTENT,
     module: "模块五：Context 详解",
     title: "Context：上下文的艺术",
@@ -262,7 +245,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 18,
+    id: 17,
     type: SlideType.CONTENT,
     module: "模块五：Instruction 详解",
     title: "Instruction：清晰的指令",
@@ -274,7 +257,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 19,
+    id: 18,
     type: SlideType.CONTENT,
     module: "模块五：Feedback 详解",
     title: "Feedback：迭代的力量",
@@ -286,7 +269,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 20,
+    id: 19,
     type: SlideType.CONTENT,
     module: "模块五：实战演示",
     title: "演示：从 0 到 1 (OCR 工具)",
@@ -299,10 +282,10 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 21,
+    id: 20,
     type: SlideType.CONTENT,
     module: "模块六：心态与作业",
-    duration: "1:50 - 2:05",
+
     title: "建立三种心态",
     content: [
       "自主学习：文档和 Changelog 就是教材。没人能把所有东西教给你。",
@@ -311,7 +294,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 22,
+    id: 21,
     type: SlideType.CONTENT,
     module: "模块六：0→1 路径",
     title: "从 0 到 1 的四步路径",
@@ -323,7 +306,7 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 23,
+    id: 22,
     type: SlideType.INTERACTION,
     module: "模块六：自我检视",
     title: "你现在在哪一步？",
@@ -335,10 +318,10 @@ export const SLIDES: SlideData[] = [
     isInteractive: true
   },
   {
-    id: 24,
+    id: 23,
     type: SlideType.CONTENT,
     module: "模块六：作业说明",
-    duration: "2:05 - 2:15",
+
     title: "课后作业：你的第一个 AI 产品",
     content: [
       "任务：下次课前，完成一个「可运行的最小产品」",
@@ -347,22 +330,9 @@ export const SLIDES: SlideData[] = [
       "简短说明：问题是什么 / 你的方案 / MVP 定义 / 下一步计划"
     ]
   },
+
   {
-    id: 25,
-    type: SlideType.CONTENT,
-    module: "附录",
-    title: "资源清单",
-    content: [
-      "Lovable: [R8]",
-      "MarsCode: [R9]",
-      "Cursor: [R2] [R3]",
-      "Windsurf: [R6]",
-      "Claude Code: [R4] [R5]",
-      "Vibe Coding: [R7]"
-    ]
-  },
-  {
-    id: 26,
+    id: 24,
     type: SlideType.ENDING,
     module: "课程结束",
     title: "从现在开始，做一个会用 AI 的人",

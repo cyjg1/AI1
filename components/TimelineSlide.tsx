@@ -35,17 +35,17 @@ const TimelineSlide: React.FC<Props> = ({ title, subtitle, stages }) => {
 
   return (
     <>
-      <div className="flex flex-col h-full justify-start py-8">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-black mb-2">{title}</h2>
+      <div className="flex flex-col h-full justify-start py-6 md:py-8">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-2 break-words">{title}</h2>
           {subtitle && (
-            <p className="text-lg text-gray-600 italic">
+            <p className="text-base md:text-lg text-gray-600 italic break-words">
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 flex-1 overflow-y-auto pb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 flex-1 overflow-y-auto pb-4">
           {stages.map((stage, index) => (
             <div
               key={index}

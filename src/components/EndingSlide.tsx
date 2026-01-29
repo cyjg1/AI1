@@ -57,35 +57,35 @@ const EndingSlide: React.FC<Props> = ({ title, content, onRestart }) => {
         </div>
 
         {/* 交互按钮 */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           {onRestart && (
             <button
               onClick={onRestart}
-              className="group px-8 py-4 bg-white border-2 border-black rounded-lg hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-2 hover-lift"
+              className="group px-10 py-5 bg-white border-2 border-black rounded-xl hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-3 hover-lift text-lg font-semibold"
             >
-              <RotateCcw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
-              <span className="font-semibold">重新开始</span>
+              <RotateCcw className="w-6 h-6 group-hover:rotate-180 transition-transform duration-500" />
+              <span>重新开始</span>
             </button>
           )}
 
           <button
             onClick={handleClick}
-            className="group px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 hover-lift relative overflow-hidden"
+            className="group px-12 py-6 bg-black text-white rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center gap-3 hover-lift relative overflow-hidden text-xl font-bold shadow-2xl hover:scale-110"
           >
-            <Sparkles className="w-5 h-5" />
-            <span className="font-semibold">开始实践</span>
+            <Sparkles className="w-7 h-7" />
+            <span>开始实践</span>
             
             {showConfetti && (
               <div className="absolute inset-0 pointer-events-none">
-                {[...Array(30)].map((_, i) => (
+                {[...Array(50)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-confetti"
+                    className="absolute w-3 h-3 bg-yellow-400 rounded-full animate-confetti"
                     style={{
                       left: '50%',
                       top: '50%',
-                      '--tx': `${(Math.random() - 0.5) * 200}px`,
-                      '--ty': `${(Math.random() - 0.5) * 200}px`,
+                      '--tx': `${(Math.random() - 0.5) * 300}px`,
+                      '--ty': `${(Math.random() - 0.5) * 300}px`,
                       animationDelay: `${Math.random() * 0.3}s`,
                     } as React.CSSProperties}
                   />

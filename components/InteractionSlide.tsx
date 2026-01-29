@@ -19,19 +19,19 @@ const InteractionSlide: React.FC<Props> = ({ title, content }) => {
 
   return (
     <div className="flex flex-col h-full justify-center">
-      <h2 className="text-4xl md:text-5xl font-bold mb-12 border-b-2 border-black pb-4">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 border-b-2 border-black pb-4 break-words">
         {title}
       </h2>
       
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
         {content.map((question, idx) => (
           <div
             key={idx}
-            className="group p-8 border-2 border-gray-200 rounded-lg hover:border-black hover:shadow-xl transition-all duration-300 hover-lift cursor-pointer"
+            className="group p-6 md:p-8 border-2 border-gray-200 rounded-lg hover:border-black hover:shadow-xl transition-all duration-300 hover-lift cursor-pointer"
             onClick={() => toggleHand(idx)}
           >
-            <div className="flex items-center justify-between">
-              <p className="text-xl md:text-2xl font-medium flex-1">
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-lg md:text-xl lg:text-2xl font-medium flex-1 break-words">
                 {question}
               </p>
               

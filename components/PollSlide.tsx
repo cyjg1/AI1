@@ -26,10 +26,10 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
 
   return (
     <div className="flex flex-col h-full justify-center">
-      <h2 className="text-4xl font-bold mb-8">{title}</h2>
-      <p className="text-xl mb-8 text-gray-600">{content[0]}</p>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 break-words">{title}</h2>
+      <p className="text-lg md:text-xl mb-6 md:mb-8 text-gray-600 break-words">{content[0]}</p>
       
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-3 md:gap-4">
         {pollOptions.map((option) => {
           const voteCount = votes[option.id] || 0;
           const percentage = getPercentage(option.id);
@@ -70,10 +70,10 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
                     {option.id}
                   </span>
                   <div className="flex-1">
-                    <div className="font-bold text-lg flex items-center gap-2">
+                    <div className="font-bold text-base md:text-lg flex items-center gap-2 break-words">
                       {option.label}
                       {isSelected && (
-                        <span className="text-xs bg-white text-black px-2 py-1 rounded-full">
+                        <span className="text-xs bg-white text-black px-2 py-1 rounded-full whitespace-nowrap">
                           已选择
                         </span>
                       )}
@@ -81,7 +81,7 @@ const PollSlide: React.FC<Props> = ({ slideId, title, content, pollOptions }) =>
                     <div
                       className={`text-sm ${
                         isSelected ? 'text-gray-300' : 'text-gray-500'
-                      }`}
+                      } break-words`}
                     >
                       {option.description}
                     </div>
