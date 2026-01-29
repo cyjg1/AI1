@@ -31,7 +31,7 @@ export const SLIDES: SlideData[] = [
     title: "不仅仅是工具的升级",
     quote: "AGI 时代已来，AI 不会淘汰人类，但会用 AI 的人一定会淘汰不会用的人。",
     content: [
-      "核心隐喻：过去软件是"固定的锤子"，现在 AI 是"无限心智的管理者"。",
+      "核心隐喻：过去软件是「固定的锤子」，现在 AI 是「无限心智的管理者」。",
       "现状：代码正在自我转化，从静态资产变为动态生产力流。"
     ]
   },
@@ -56,7 +56,7 @@ export const SLIDES: SlideData[] = [
     content: [
       "你过去一周有没有用过 AI？",
       "你有没有用 AI 帮你完成过一个完整任务？",
-      "你有没有用 AI 完成过一个"能跑起来的东西"？"
+      "你有没有用 AI 完成过一个「能跑起来的东西」？"
     ],
     isInteractive: true
   },
@@ -93,7 +93,7 @@ export const SLIDES: SlideData[] = [
     content: [
       "时间：2015-2020",
       "技术原理：N-gram 或 LSTM。",
-      "核心逻辑：像"鹦鹉"一样分析概率分布，预测下一个词。",
+      "核心逻辑：像「鹦鹉」一样分析概率分布，预测下一个词。",
       "局限性：缺乏长上下文，只能看当前行。",
       "代表产品：Kite, Tabnine (早期)。"
     ]
@@ -105,7 +105,7 @@ export const SLIDES: SlideData[] = [
     title: "第二阶段：生成式 Copilot 时代",
     content: [
       "时间：2021-2024 [R1]",
-      "核心交互："幽灵文本" (Ghost Text)。",
+      "核心交互：「幽灵文本」(Ghost Text)。",
       "能力跃升：理解意图（读懂函数名/注释）、文件级感知。",
       "里程碑：2021年6月 GitHub Copilot 技术预览版发布。"
     ]
@@ -116,7 +116,7 @@ export const SLIDES: SlideData[] = [
     module: "模块二：行业演进",
     title: "第三阶段：Agentic & Vibe Coding",
     content: [
-      "核心定义：从"补全"变为"代理 (Agent)"。自主规划、执行、自我修正。",
+      "核心定义：从「补全」变为「代理」(Agent)。自主规划、执行、自我修正。",
       "2024.07：Cursor 发布 Composer，自然语言驱动整个项目。[R2][R3]",
       "2025.02：Andrej Karpathy 提出 \"Vibe Coding\" —— 只要 vibe 对，代码就对。[R7]",
       "2025：Claude Code 发布，AI 像黑客一样在终端操作。[R4][R5]"
@@ -185,7 +185,7 @@ export const SLIDES: SlideData[] = [
     content: [
       "定义：Minimum Viable Product (最小可行性产品)。",
       "原则：能跑起来 > 完美的架构。",
-      "你的新角色：从"砌砖工匠"转变为"包工头 + 设计师"。",
+      "你的新角色：从「砌砖工匠」转变为「包工头 + 设计师」。",
       "课堂练习：请用一句话写出你的 MVP —— 输入 → 处理 → 输出"
     ]
   },
@@ -209,8 +209,8 @@ export const SLIDES: SlideData[] = [
     module: "模块四：核心心法",
     title: "新的范式：Agent 研发",
     content: [
-      "从"命令式"到"目标导向"：不写 `if (a>b)`，而是写"分析数据，异常报警"。",
-      "从"调试代码"到"调试思维链"：观察 AI 为什么选错工具，优化 Prompt。",
+      "从「命令式」到「目标导向」：不写 `if (a>b)`，而是写「分析数据，异常报警」。",
+      "从「调试代码」到「调试思维链」：观察 AI 为什么选错工具，优化 Prompt。",
       "结果评判：从确定性到概率性。学会与不确定性共舞。"
     ]
   },
@@ -235,7 +235,7 @@ export const SLIDES: SlideData[] = [
     title: "Vibe Coding 三要素",
     content: [
       "1. Context (上下文)：一次性喂入所有资料（文档、数据库、旧代码）。",
-      "2. Instruction (指令)：自然语言清晰描述"要什么"和"不要什么"。",
+      "2. Instruction (指令)：自然语言清晰描述「要什么」和「不要什么」。",
       "3. Feedback (反馈)：报错直接甩回给 AI，让它自我修正 (Human in the loop)。"
     ]
   },
@@ -258,9 +258,9 @@ export const SLIDES: SlideData[] = [
     title: "Instruction：清晰的指令",
     content: [
       "好的指令：目标明确 + 约束条件 + 期望格式",
-      "示例："做一个任务管理网页，使用 React，卡片式布局，支持拖拽排序，不要使用第三方UI库"",
+      "示例：「做一个任务管理网页，使用 React，卡片式布局，支持拖拽排序，不要使用第三方UI库」",
       "技巧：先说要什么，再说不要什么",
-      "避免：模糊的需求，"做个好看的界面""
+      "避免：模糊的需求，「做个好看的界面」"
     ]
   },
   {
@@ -272,7 +272,7 @@ export const SLIDES: SlideData[] = [
       "Human in the loop：人类负责判断和引导，AI 负责执行",
       "快速迭代：看到问题立即反馈，不要等到最后",
       "报错处理：直接把错误信息甩给 AI，它通常能自己修复",
-      "精细调整："按钮再大一点"、"颜色改成蓝色系""
+      "精细调整：「按钮再大一点」、「颜色改成蓝色系」"
     ]
   },
   {
@@ -282,9 +282,9 @@ export const SLIDES: SlideData[] = [
     title: "演示：从 0 到 1 (OCR 工具)",
     content: [
       "Step 1: 打开 Cursor/Lovable。",
-      "Step 2: Prompt "做个网页，支持上传图片，识别导出 Markdown"。",
+      "Step 2: Prompt 「做个网页，支持上传图片，识别导出 Markdown」。",
       "Step 3: 生成与预览。",
-      "Step 4: 反馈调整 —— "换个 CSS 风格"，"用更高级的模型"。",
+      "Step 4: 反馈调整 —— 「换个 CSS 风格」，「用更高级的模型」。",
       "Step 5: 部署上线，分享给团队。"
     ]
   },
@@ -331,7 +331,7 @@ export const SLIDES: SlideData[] = [
     duration: "2:05 - 2:15",
     title: "课后作业：你的第一个 AI 产品",
     content: [
-      "任务：下次课前，完成一个"可运行的最小产品"",
+      "任务：下次课前，完成一个「可运行的最小产品」",
       "最低要求：能运行 + 有清晰输入/输出 + 有一条完整流程",
       "提交方式：1 分钟演示视频",
       "简短说明：问题是什么 / 你的方案 / MVP 定义 / 下一步计划"
@@ -357,7 +357,7 @@ export const SLIDES: SlideData[] = [
     module: "课程结束",
     title: "从现在开始，做一个会用 AI 的人",
     content: [
-      "今天你只需要得到一个"可以开始"的思路。",
+      "今天你只需要得到一个「可以开始」的思路。",
       "记住：AI 不会淘汰人类，但会用 AI 的人会淘汰不会用的人。",
       "下次课见！"
     ]
