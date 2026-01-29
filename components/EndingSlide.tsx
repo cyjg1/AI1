@@ -115,8 +115,8 @@ const EndingSlide: React.FC<Props> = ({ title, content, onRestart }) => {
             </button>
             
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">扫码加入社群</h3>
-              <p className="text-gray-600 mb-6">一起学习 AI 编程，共同进步</p>
+              <h3 className="text-2xl font-bold mb-4">一个平平无奇的二维码</h3>
+              <p className="text-gray-600 mb-6">要交作业哦</p>
               
               <div className="bg-white p-4 rounded-xl border-2 border-gray-200">
                 <img
